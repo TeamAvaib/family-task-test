@@ -14,6 +14,7 @@ namespace DataLayer
         }
 
         public DbSet<Member> Members { get; set; }
+        public DbSet<Tasks> Task { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

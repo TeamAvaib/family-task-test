@@ -19,6 +19,11 @@
     .menu-wrapper .menu-item.active {
         border: 3px solid #CC1778;
     }
+
+        .menu-wrapper .menu-item.drop-hover {
+            border: 3px dotted #CC1778;
+        }
+
     .menu-wrapper .add-menu-item {
         border: 1px dashed #000000;
         box-sizing: border-box;
@@ -65,7 +70,7 @@
 <div class="menu-wrapper col-12 p-0">
     @if(MenuItems != null && MenuItems.Length > 0) {
         @foreach (var item in MenuItems) {
-            <div class="menu-item col-10 offset-1 p-3 my-4 p-sm-2 @(item.isActive ? "active" : "")" @onclick="@(e => item.InvokClickCallback(item))">
+            <div class="menu-item col-10 offset-1 p-3 my-4 p-sm-2 drop @(item.isActive ? "active" : "")" @onclick="@(e => item.InvokClickCallback(item))" id="@item.referenceId">
                 @if(item.iconColor != null) {
                     <div class="avtar mr-3" style="background-color: @(item.iconColor);"> </div>
                 }
